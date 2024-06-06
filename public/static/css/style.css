@@ -1,0 +1,114 @@
+body{
+    background-color: #FFFFFF;
+    margin: auto;
+}
+
+/*header*/
+
+header{
+    width: 87%;
+    margin: auto;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.head{
+    height: 130;
+    width: 100%;
+}
+
+.inicio{
+    text-align: end;
+}
+
+.inicio-btn{
+    border: none;
+    color: gray;
+}
+
+.inicio-btn :hover{
+    color: black;
+}
+
+.hr{
+    background-color: #e7e7e7;
+    height: 1px;
+    margin-bottom: 30px;
+}
+
+/*card*/
+
+.container{
+    width: 87%;
+    margin: auto;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.card{
+    border: #cacaca solid 1px;
+    border-radius: 5px;
+    margin: auto;
+    padding: auto;
+}
+
+.card-header{
+    border-bottom: #cacaca solid 1px;
+    margin: auto;
+    color: #337AB7;
+    font-size: 25px;
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.card-content{
+    margin: auto;
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: auto;
+    padding-bottom: 50px;
+}
+
+.card-foot{
+    border-top: #cacaca solid 1px;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.input{
+    width: 100%;
+}
+
+.link{
+    text-align: end;
+    padding-left: auto;
+    padding-right: auto;
+}
+
+.consultar-btn{
+    background-color: #31B0D5;
+    color: white;
+    border: #337AB7 solid 1px;
+}
+
+.consultar-btn :hover{
+    background-color: #2a8ba8;
+    color: white;
+
+}
+
+/*footer*/
+
+footer{
+    font-size: 14px;
+    width: 87%;
+    margin: auto;
+    padding-left: auto;
+    padding-right: auto;
+    padding-top: 30px;
+    padding-bottom: 5px;
+}

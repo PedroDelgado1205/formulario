@@ -1,0 +1,16 @@
+# Ignorar archivos de entorno
+.env
+
+# Ignorar node_modules
+node_modules/
+
+# Ignorar logs
+*.log
+logs/
+
+# Ignorar directorios de cobertura de pruebas
+coverage/
+
+# Ignorar archivos de sistema
+.DS_Store
+Thumbs.db
