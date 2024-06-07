@@ -45,6 +45,25 @@ app.get('/consulta', (req, res) => {
     });
 });
 
+// Ruta para comparar los datos del formulario con la base de datos
+app.post('/comparar-datos', (req, res) => {
+    const { numero, codigo, fecha } = req.body;
+    connection.query('SELECT * FROM consulta WHERE numero_legalizacion = ? AND codigo_verificacion = ? AND fecha_emision = ?', [numero, codigo, fecha], (error, results) => {
+        if (error) {
+            console.error('Error querying database:', error);
+            res.status(500).json({ error: 'Error querying database' });
+            return;
+        }
+        if (results.length > 0) {
+            // Si hay resultados, devolver los datos encontrados
+            const matchData = results[0]; // Supongamos que solo necesitas el primer resultado
+            res.json({ match: true, data: matchData });
+        } else {
+            res.json({ match: false, data: null }); // No se encontraron coincidencias
+        }
+    });
+});
+
 // Iniciar el servidor
 app.listen(PORT, () => {
     console.log(`Servidor Express en funcionamiento en http://localhost:${PORT}`);

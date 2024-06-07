@@ -4,59 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>consultalegalizacionve</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
     <header>
-        <img src="https://consultalegalizacionve.mppre.gob.ve/cal/static/src/img/header.png" alt="head" class="head">
-        <div class="inicio">
-            <button class="button inicio-btn">Inicio</button>
+        <div class="head d-flex justify-content-center">
+            <img src="https://consultalegalizacionve.mppre.gob.ve/cal/static/src/img/header.png" width="87%" height="100" alt="navbar">
         </div>
-    </header>
-    <div class="hr">
-    </div>
-    <section>
-        <div class="container">
-            <div class="card">
-                <div class="card-header">
-                    <h1><b>Consulta de Legalización/Apostilla</b></h1>
-                </div>
-                <div class="card-content">
-                    <div class="content">
-                        <div class="link"> <a href="#">Validar firma de Apostilla Electrónica</a></div>
-                        <form>
-                            <div class="field">
-                                <label class="label"><b>Número de Legalización/Apostilla</b></label>
-                                <div class="control">
-                                    <input class="input" type="text" placeholder="Número de Legalización/Apostilla">
-                                </div>
-                            </div>
-
-                            <div class="field">
-                                <label class="label"><b>Código de Verificación</b></label>
-                                <div class="control">
-                                    <input class="input" type="text" placeholder="Código de verificación de la Legalización/Apostilla">
-                                </div>
-                            </div>
-
-                            <div class="field">
-                                <label class="label"><b>Fecha de Emisión</b></label>
-                                <div class="control">
-                                    <input class="input" type="date" placeholder="Fecha de Emisión de la Legalización/Apostilla">
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="card-foot">
-                    <button class="button consultar-btn" href="#">Consultar</button>
-                </div>
+        <div class="navbar navbar-default navbar-static-top d-flex flex-row-reverse">
+            <div class="inicio">
+                <a class="inicio-btn" href="/">
+                    <span>Inicio</span>
+                </a>
             </div>
         </div>
-    </section>
+        <div class="hr"></div>
+    </header>
+    <main>
+        <form id="form1" class="content-fr">
+            <div class="fr-header d-flex justify-content-center">
+                <b>Consulta de Legalización/Apostilla</b> 
+            </div>
+            <div class="fr_cuerpo">
+                <div class="vinculo">
+                    <a href="#" id="link1">Validar firma de Apostilla Electrónica</a>
+                </div>
+                <div class="flex-column d-flex">
+                    <label for="numero"><b>Número de Legalización/Apostilla</b></label>
+                    <input class="form-control" type="text" id="numero" name="numero" placeholder="Número de Legalización/Apostilla" required>
+                    <label for="codigo"><b>Código de Verificación</b></label>
+                    <input class="form-control" type="text" id="codigo" name="codigo" placeholder="Código de Verificación de la Legalización/Apostilla" required>
+                    <label for="fecha"><b>Fecha de Emisión</b></label>
+                    <input class="form-control" type="text" id="fecha" name="fecha" placeholder="Selecciona la fecha" readonly required>
+                </div>
+            </div>
+            <div class="fr-footer d-flex justify-content-center">
+                <button class="btn btn-1" type="submit">Consultar</button>
+            </div>
+        </form>
+        
+        <form id="form2" class="content-fr" style="display: none;">
+            <div class="fr-header d-flex justify-content-center">
+                <b>Validar firma de Apostilla Electrónica</b>
+            </div>
+            <div class="fr_cuerpo">
+                <div class="vinculo">
+                    <a href="#" id="link2">Consultar Legalización/Apostilla</a>
+                </div>  
+                <div class="flex-column d-flex">
+                    <label for="apostilla">Apostilla Electrónica</label>
+                    <label id="doc" class="form-control" for="apostilla">
+                        Cargar PDF
+                        <input class="form-control" type="file" id="apostilla" name="apostilla" onchange="updateFileName()" style="display:none;">
+                    </label>
+                </div>
+            </div>
+            <div class="fr-footer d-flex justify-content-center">
+                <button class="btn btn-1" type="button" id="buscar" data-bs-toggle="modal" data-bs-target="#exampleModal">Consultar</button>
+            </div>
+        </form>
+        
+        <form id="form3" class="content-fr" style="display: none;">
+            <div class="fomulario3">
+                <b>Esta Legalización/Apostilla es válida</b>
+                <button class="btn btn-2" id="verPDF">Ver PDF</button>
+                <button class="btn btn-3" id="limpiar">Limpiar</button>
+            </div>
+            <div class="fr_cuerpo">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="td-titulo"><b>Titular</b></td>
+                            <td class="td-cuerpo"><b>NOMBRE EN BLANCO PARA RELLENAR</b></td>
+                        </tr>
+                        <tr>
+                            <td class="td-titulo"><b>Organismo</b></td>
+                            <td class="td-cuerpo"><b>Ministerio del Poder Popular para la Educacion<br>Universitaria</b></td>
+                        </tr>
+                        <tr>
+                            <td class="td-titulo"><b>Documento</b></td>
+                            <td class="td-cuerpo"><b>Cartificacion Electronica de Firma de Autoridad para<br>Titulo en Pergamino</b></td>
+                        </tr>
+                        <tr>
+                            <td class="td-titulo"><b>Firma de la<br>Legalización/Apostilla</b></td>
+                            <td class="td-cuerpo"><b>YOLANDA AURIMAR MELENDEZ MORO</b></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="fr-footer d-flex justify-content-center">
+                <button class="btn btn-1" type="submit">Consultar</button>
+            </div>
+        </form>
+        
+        <form id="pdfViewer" class="content-fr" style="display: none;">
+            <button class="btn btn-1" id="volver">Volver</button>
+            <div class="pdf-view"></div>
+        </form>
+        
+    </main>
     <footer>
         Copyright © Sistema de Legalización y Apostilla Electrónica
     </footer>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Error de Formaro</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>El archivo a cargar debe ser formato PDF y corresponder a un documento de Apostilla Electrónica emitido y firmado electrónicamente desde el Sistema de Legalización y Apostilla Electrónica.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Error de Solicitud</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Se produjo un error al procesar la solicitud.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/static/js/main.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jQuery UI -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $("#fecha").datepicker({
+                dateFormat: 'yy-mm-dd', // Formato de fecha
+                changeYear: true, // Permitir selección del año
+                changeMonth: true // Permitir selección del mes
+            });
+        });
+
+        function updateFileName() {
+            const input = document.getElementById('apostilla');
+            const label = document.getElementById('doc');
+            const fileName = input.files[0].name;
+            label.innerText = fileName;
+        }
+    </script>
 </body>
 </html>
