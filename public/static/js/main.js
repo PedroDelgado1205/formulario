@@ -1,5 +1,5 @@
 
-// Encontrar los componetes necesarios y encerrarlos en variables
+// Encontrar los componentes necesarios y encerrarlos en variables
 document.addEventListener('DOMContentLoaded', () => {
     const form1 = document.getElementById('form1');
     const form2 = document.getElementById('form2');
@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Consultar en Formulario 1
     form1.addEventListener('submit', (e) => {
         e.preventDefault();
-        // Simulando una validación exitosa
         const numero = document.getElementById('numero').value;
         const codigo = document.getElementById('codigo').value;
         const fecha = document.getElementById('fecha').value;
@@ -48,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data.match) {
                 // Si hay coincidencia en la base de datos, muestra el formulario 3
                 form3.style.display = 'block';
-                // Actualiza datos en la tabla (simulado)
+                // Actualiza datos en la tabla
                 document.querySelector('.td-cuerpo b').innerText = data.data['titular'];
                 document.querySelectorAll('.td-cuerpo b')[1].innerText = 'Ministerio del Poder Popular para la Educacion Universitaria';
                 document.querySelectorAll('.td-cuerpo b')[2].innerHTML = 'Cartificacion Electronica de Firma de Autoridad para<br>Titulo en Pergamino';
@@ -79,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         form1.style.display = 'none';
         pdfViewer.style.display = 'block';
 
-        // Aquí debes actualizar la ruta del PDF en el iframe
+        // Aquí debes actualizar la ruta del PDF en el iframe, debes ingresarlos dentro de la carpeta llamada pdf
         const pdfDiv = document.querySelector('.pdf-view');
         pdfDiv.innerHTML = '<iframe src="/static/pdf/Doc1.pdf" width="100%" height="600px"></iframe>';
     });
