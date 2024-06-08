@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const verPDF = document.getElementById('verPDF');
     const limpiar = document.getElementById('limpiar');
     const volver = document.getElementById('volver');
-    const buscar = document.getElementById('buscar')
 
     // Cambiar a Formulario 2
     link1.addEventListener('click', (e) => {
         e.preventDefault();
         form1.style.display = 'none';
+        form3.style.display = 'none';
         form2.style.display = 'block';
     });
 

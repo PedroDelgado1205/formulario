@@ -17,7 +17,7 @@
         </div>
         <div class="navbar navbar-default navbar-static-top d-flex flex-row-reverse">
             <div class="inicio">
-                <a class="inicio-btn" href="/">
+                <a class="inicio-btn" href="https://consultalegalizacionve.mppre.gob.ve" target="_blank">
                     <span>Inicio</span>
                 </a>
             </div>
@@ -44,11 +44,44 @@
                     <input class="form-control" type="text" id="codigo" name="codigo" placeholder="Código de Verificación de la Legalización/Apostilla" required>
                     <label for="fecha"><b>Fecha de Emisión</b></label>
                     <input class="form-control" type="text" id="fecha" name="fecha" placeholder="Selecciona la fecha" readonly required>
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                </div>
+            </div>
+
+            <!-- Tercer formulario dentro del primer formulario, inicialmente oculto -->
+            <div id="form3" style="display: none;">
+                <div class="fomulario3">
+                    <b>Esta Legalización/Apostilla es válida</b>
+                    <button class="btn btn-2" id="verPDF"> <i class="fa-regular fa-file-pdf"></i> Ver PDF</button>
+                    <button class="btn btn-3" id="limpiar"> <i class="fa-solid fa-broom"></i> Limpiar</button>
+                </div>
+                <div class="fr_cuerpo">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="td-titulo"><b>Titular</b></td>
+                                <td class="td-cuerpo"><b>NOMBRE EN BLANCO PARA RELLENAR</b></td>
+                            </tr>
+                            <tr>
+                                <td class="td-titulo"><b>Organismo</b></td>
+                                <td class="td-cuerpo"><b>Ministerio del Poder Popular para la Educacion<br>Universitaria</b></td>
+                            </tr>
+                            <tr>
+                                <td class="td-titulo"><b>Documento</b></td>
+                                <td class="td-cuerpo"><b>Cartificacion Electronica de Firma de Autoridad para<br>Titulo en Pergamino</b></td>
+                            </tr>
+                            <tr>
+                                <td class="td-titulo"><b>Firma de la<br>Legalización/Apostilla</b></td>
+                                <td class="td-cuerpo"><b>YOLANDA AURIMAR MELENDEZ MORO</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div class="fr-footer d-flex justify-content-center">
                 <button class="btn btn-1" type="submit">Consultar</button>
             </div>
+
         </form>
 
         <!-- Segundo formulario para subir el PDF y consultar (Siempre muestra un error de formato como lo solicitado) -->
@@ -73,40 +106,6 @@
             </div>
         </form>
 
-        <!-- Tercer formulario donde muestra una tabla con los datos en caso de que la información ingresada este en la base de datos -->
-        <form id="form3" class="content-fr" style="display: none;">
-            <div class="fomulario3">
-                <b>Esta Legalización/Apostilla es válida</b>
-                <button class="btn btn-2" id="verPDF">Ver PDF</button>
-                <button class="btn btn-3" id="limpiar">Limpiar</button>
-            </div>
-            <div class="fr_cuerpo">
-                <table>
-                    <tbody>
-                        <tr>
-                            <td class="td-titulo"><b>Titular</b></td>
-                            <td class="td-cuerpo"><b>NOMBRE EN BLANCO PARA RELLENAR</b></td>
-                        </tr>
-                        <tr>
-                            <td class="td-titulo"><b>Organismo</b></td>
-                            <td class="td-cuerpo"><b>Ministerio del Poder Popular para la Educacion<br>Universitaria</b></td>
-                        </tr>
-                        <tr>
-                            <td class="td-titulo"><b>Documento</b></td>
-                            <td class="td-cuerpo"><b>Cartificacion Electronica de Firma de Autoridad para<br>Titulo en Pergamino</b></td>
-                        </tr>
-                        <tr>
-                            <td class="td-titulo"><b>Firma de la<br>Legalización/Apostilla</b></td>
-                            <td class="td-cuerpo"><b>YOLANDA AURIMAR MELENDEZ MORO</b></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="fr-footer d-flex justify-content-center">
-                <button class="btn btn-1" type="submit">Consultar</button>
-            </div>
-        </form>
-
         <!-- Cuarto formulario donde muestra un PDF (el PDF es genérico y de prueba) -->
         <form id="pdfViewer" class="content-fr" style="display: none;">
             <button class="btn btn-1" id="volver">Volver</button>
@@ -125,7 +124,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Error de Formaro</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Error de Formato</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -156,8 +155,6 @@
         </div>
     </div>
 
-    <!-- Script que enlaza con al archivo de JavaScript -->
-    <script src="/static/js/main.js"></script>
     <!-- Script de que enlace con la librería de jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Script de que enlace con la librería de jQuery UI -->
@@ -178,8 +175,11 @@
             const input = document.getElementById('apostilla');
             const label = document.getElementById('doc');
             const fileName = input.files[0].name;
-            label.innerText = fileName;
+            label.innerHTML = `${fileName}
+                        <input class="form-control" type="file" id="apostilla" name="apostilla" onchange="updateFileName()" style="display:none;">`;
         }
     </script>
+    <!-- Script que enlaza con el archivo de JavaScript -->
+    <script src="/static/js/main.js"></script>
 </body>
 </html>
