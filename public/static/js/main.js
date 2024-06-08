@@ -1,4 +1,5 @@
 
+// Encontrar los componetes necesarios y encerrarlos en variables
 document.addEventListener('DOMContentLoaded', () => {
     const form1 = document.getElementById('form1');
     const form2 = document.getElementById('form2');
