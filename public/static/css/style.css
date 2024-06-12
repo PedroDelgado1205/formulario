@@ -56,15 +56,23 @@ form {
 }
 
 .fomulario3 {
-    padding-top: 2%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fomulario3 b {
+    font-size: 14px;
+    color: #5baa59;
+}
+
+.fomulario3-cuerpo {
     padding-bottom: 2%;
-    background-color: #F5F5F5;
     padding-left: 16.6%;
     padding-right: 16.6%;
-    border-bottom: 1px solid #DDDDDD;
-    border-top: 1px solid #DDDDDD;
+    /*border-top: 1px solid #DDDDDD;*/
     font-size: 14px;
-    color: #198754;
+    /*color: #198754;*/
 }
 
 .fr_cuerpo {
@@ -82,8 +90,8 @@ form {
 }
 
 .fr-footer {
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding-top: 1%;
+    padding-bottom: 1%;
     background-color: #F5F5F5;
     border-top: 1px solid #DDDDDD;
     font-size: 24px;
@@ -96,6 +104,7 @@ table{
 
 .td-titulo {
     padding-right: 6%;
+
 }
 
 .td-cuerpo {
@@ -107,14 +116,40 @@ table{
     color: #FFFFFF;
 }
 
+.btn-1:hover{
+    background-color: #257e99;
+    color: #FFFFFF;
+}
+
 .btn-2 {
-    background-color: #198754;
+    background-color: #5baa59;
+    color:#FFFFFF;
+}
+
+.btn-2:hover {
+    background-color: #105334;
     color:#FFFFFF;
 }
 
 .btn-3 {
     background-color: #FFFFFF;
     color: #333333;
+    border: #747474 solid 1px;
+}
+
+.btn-3:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.btn-4{
+    background-color: #6e1f75;
+    color: #DDDDDD;
+}
+
+.btn-4:hover{
+    background-color: #401244;
+    color: #DDDDDD;
 }
 
 .content-fr {
@@ -123,7 +158,14 @@ table{
 
 .form-control {
     width: 100%;
-    margin-bottom: 1rem;
+}
+
+.pad1{
+    margin-top: 1%;
+}
+
+.pad2{
+    margin-bottom: 1%;
 }
 
 /*footer*/

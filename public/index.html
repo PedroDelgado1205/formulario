@@ -40,8 +40,8 @@
                 <div class="flex-column d-flex">
                     <label for="numero"><b>Número de Legalización/Apostilla</b></label>
                     <input class="form-control" type="text" id="numero" name="numero" placeholder="Número de Legalización/Apostilla" required>
-                    <label for="codigo"><b>Código de Verificación</b></label>
-                    <input class="form-control" type="text" id="codigo" name="codigo" placeholder="Código de Verificación de la Legalización/Apostilla" required>
+                    <label class="pad1" for="codigo"><b>Código de Verificación</b></label>
+                    <input class="form-control pad2" type="text" id="codigo" name="codigo" placeholder="Código de Verificación de la Legalización/Apostilla" required>
                     <label for="fecha"><b>Fecha de Emisión</b></label>
                     <input class="form-control" type="text" id="fecha" name="fecha" placeholder="Selecciona la fecha" readonly required>
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -50,13 +50,26 @@
 
             <!-- Tercer formulario dentro del primer formulario, inicialmente oculto -->
             <div id="form3" style="display: none;">
-                <div class="fomulario3">
-                    <b>Esta Legalización/Apostilla es válida</b>
-                    <button class="btn btn-2" id="verPDF"> <i class="fa-regular fa-file-pdf"></i> Ver PDF</button>
-                    <button class="btn btn-3" id="limpiar"> <i class="fa-solid fa-broom"></i> Limpiar</button>
-                </div>
-                <div class="fr_cuerpo">
-                    <table>
+                <div class="fomulario3-cuerpo">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="fomulario3">
+                                        <span class="validacion-texto"><b>Esta Legalización/Apostilla es válida.</b></span>
+                                        <div class="btns">
+                                            <button class="btn btn-2" id="verPDF">
+                                                <i class="fa-regular fa-file-pdf"></i> Ver PDF
+                                            </button>
+                                            <button class="btn btn-3" id="limpiar">
+                                                <i class="fa-solid fa-broom"></i> Limpiar
+                                            </button>
+                                        </div>
+                                    </div>
+                                    
+                                </td>
+                            </tr>
+                        </thead>
                         <tbody>
                             <tr>
                                 <td class="td-titulo"><b>Titular</b></td>
@@ -79,9 +92,8 @@
                 </div>
             </div>
             <div class="fr-footer d-flex justify-content-center">
-                <button class="btn btn-1" type="submit">Consultar</button>
+                <button id="btn-Principal" class="btn btn-1" type="submit">Consultar</button>
             </div>
-
         </form>
 
         <!-- Segundo formulario para subir el PDF y consultar (Siempre muestra un error de formato como lo solicitado) -->
@@ -109,7 +121,9 @@
         <!-- Cuarto formulario donde muestra un PDF (el PDF es genérico y de prueba) -->
         <form id="pdfViewer" class="content-fr" style="display: none;">
             <button class="btn btn-1" id="volver">Volver</button>
-            <div class="pdf-view"></div>
+            <div class="pdf-view">
+            </div>
+            <!-- <div>Visitas: <span id="downloadCount"></span></div> -->
         </form>
         
     </main>
@@ -131,7 +145,7 @@
                     <p>El archivo a cargar debe ser formato PDF y corresponder a un documento de Apostilla Electrónica emitido y firmado electrónicamente desde el Sistema de Legalización y Apostilla Electrónica.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-4" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
@@ -149,7 +163,7 @@
                     <p>Se produjo un error al procesar la solicitud.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-4" data-bs-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>

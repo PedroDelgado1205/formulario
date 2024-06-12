@@ -75,6 +75,52 @@ app.post('/comparar-datos', (req, res) => {
     });
 });
 
+// Ruta para descargar el PDF y registrar la descarga
+app.get('/descargas-pdf/:id', (req, res) => {
+    const recordId = req.params.id;
+
+    // Incrementar el contador de descargas en la base de datos
+    const query = 'UPDATE consulta SET descargas_PDF = descargas_PDF + 1 WHERE codigo_verificacion = ?';
+    connection.query(query, [recordId], (err, result) => {
+        if (err) {
+            console.error('Error al actualizar el contador de descargas:', err);
+            res.status(500).send('Error al actualizar el contador de descargas');
+            return;
+        }
+
+        // Enviar el archivo PDF
+        const pdfPath = path.join(__dirname, 'public/static/pdf/Doc1.pdf'); // Ajusta el path según tu lógica
+        res.sendFile(pdfPath, (err) => {
+            if (err) {
+                console.error('Error al enviar el archivo:', err);
+            } else {
+                console.log('Archivo enviado con éxito');
+            }
+        });
+    });
+});
+
+// Ruta para obtener el número de descargas de un registro específico
+app.get('/descargas-contador/:id', (req, res) => {
+    const recordId = req.params.id;
+
+    // Obtener el contador de descargas de la base de datos
+    const query = 'SELECT descargas_PDF FROM consulta WHERE codigo_verificacion = ?';
+    connection.query(query, [recordId], (err, results) => {
+        if (err) {
+            console.error('Error al obtener el contador de descargas:', err);
+            res.status(500).send('Error al obtener el contador de descargas');
+            return;
+        }
+
+        if (results.length > 0) {
+            res.json({ count: results[0].descargas_PDF });
+        } else {
+            res.status(404).send('Registro no encontrado');
+        }
+    });
+});
+
 // Iniciar el servidor
 app.listen(PORT, () => {
     console.log(`Servidor Express en funcionamiento en http://localhost:${PORT}`);// Mensaje con la ruta del servidor
