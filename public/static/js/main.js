@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     } else {
                         // Si no hay coincidencia, muestra un mensaje al usuario
                         //alert('Los datos ingresados no coinciden con los registros en la base de datos.');
-                        $('#exampleModal2').modal('show');
+                        $('#errorBD').modal('show');
                     }
                 })
                 .catch(error => {

@@ -51,17 +51,17 @@
             <!-- Tercer formulario dentro del primer formulario, inicialmente oculto -->
             <div id="form3" style="display: none;">
                 <div class="fomulario3-cuerpo">
-                    <table class="table table-bordered">
+                    <table class="table">
                         <thead>
                             <tr>
                                 <td colspan="2">
                                     <div class="fomulario3">
                                         <span class="validacion-texto"><b>Esta Legalización/Apostilla es válida.</b></span>
                                         <div class="btns">
-                                            <button class="btn btn-2" id="verPDF">
+                                            <button class="btn btn-sm btn-2" id="verPDF">
                                                 <i class="fa-regular fa-file-pdf"></i> Ver PDF
                                             </button>
-                                            <button class="btn btn-3" id="limpiar">
+                                            <button class="btn btn-sm btn-3" id="limpiar">
                                                 <i class="fa-solid fa-broom"></i> Limpiar
                                             </button>
                                         </div>
@@ -92,7 +92,7 @@
                 </div>
             </div>
             <div class="fr-footer d-flex justify-content-center">
-                <button id="btn-Principal" class="btn btn-1" type="submit">Consultar</button>
+                <button id="btn-Principal" class="btn btn-sm btn-1" type="submit">Consultar</button>
             </div>
         </form>
 
@@ -114,13 +114,13 @@
                 </div>
             </div>
             <div class="fr-footer d-flex justify-content-center">
-                <button class="btn btn-1" type="button" id="buscar" data-bs-toggle="modal" data-bs-target="#exampleModal">Consultar</button>
+                <button class="btn btn-sm btn-1" type="button" id="buscar" data-bs-toggle="modal" data-bs-target="#errorPDF">Consultar</button>
             </div>
         </form>
 
         <!-- Cuarto formulario donde muestra un PDF (el PDF es genérico y de prueba) -->
         <form id="pdfViewer" class="content-fr" style="display: none;">
-            <button class="btn btn-1" id="volver">Volver</button>
+            <button class="btn btn-sm btn-1" id="volver">Volver</button>
             <div class="pdf-view">
             </div>
             <!-- <div>Visitas: <span id="downloadCount"></span></div> -->
@@ -134,36 +134,36 @@
     </footer>
 
     <!-- Mensaje de error del tercer formulario (Este es el mensaje anteriormente comentado del error de formato) -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="errorPDF" tabindex="-1" aria-labelledby="errorPDFLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Error de Formato</h1>
+                    <h1 class="modal-title fs-5" id="errorPDFLabel">Error de Formato</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <p>El archivo a cargar debe ser formato PDF y corresponder a un documento de Apostilla Electrónica emitido y firmado electrónicamente desde el Sistema de Legalización y Apostilla Electrónica.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-4" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-sm btn-4" data-bs-dismiss="modal">Aceptar</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Mensaje de error del primer formulario (Este es el mensaje que se muestra en caso de encontrar los datos en la base de datos) -->
-    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="errorBD" tabindex="-1" aria-labelledby="errorBDLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Error de Solicitud</h1>
+                    <h1 class="modal-title fs-5" id="errorBDLabel">Error de Solicitud</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <p>Se produjo un error al procesar la solicitud.</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-4" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-sm btn-4" data-bs-dismiss="modal">Aceptar</button>
                 </div>
             </div>
         </div>
