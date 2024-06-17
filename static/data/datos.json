@@ -1,0 +1,23 @@
+[
+    {
+        "numero": "126607H32E14709",
+        "codigo": "3DHHB9T6PH2",
+        "fecha": "2023-07-26",
+        "titular": "Persona3",
+        "pdf": "Doc3.pdf"
+    },
+    {
+        "numero": "126607H32E14708",
+        "codigo": "3DHHB9T6pH7",
+        "fecha": "2023-07-26",
+        "titular": "Persona2",
+        "pdf": "Doc2.pdf"
+    },
+    {
+        "numero": "166607H32E14706",
+        "codigo": "3DHHB9T6PH8",
+        "fecha": "2023-07-26",
+        "titular": "Persona1",
+        "pdf": "Doc1.pdf"
+    }
+]

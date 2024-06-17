@@ -201,9 +201,23 @@ table{
 /*footer*/
 
 footer {
-    padding-top: 2%;
+    padding-top: 15px;
     padding-bottom: 0.5%;
     padding-left: 6.5%;
-    font-size: 14px;
+    font-size: 10px;
 }
 
+/* iframe moviles*/
+
+.pdf-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    overflow: auto;
+}
+
+.pdf-view canvas {
+    max-width: 100%;
+    height: auto;
+}
