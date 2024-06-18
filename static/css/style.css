@@ -248,13 +248,13 @@ table{
 }
 
 /*motiroes grandes*/
-@media (min-width: 1600px) {
+@media (min-width: 2100px) {
 
     footer {
         height: 44px;
         background-color: #F5F5F5;
         padding: 1rem;
-        padding-left: 15.5%;
+        padding-left: 23%;
         font-size: 14px;
         display: flex;
         align-items: center;
@@ -265,7 +265,7 @@ table{
         background-color: #F5F5F5; 
         text-decoration: none;
         padding-top: 13px;
-        padding-right: 15.5%;
+        padding-right: 23%;
         padding-bottom: 13px;
     }
 
@@ -273,11 +273,6 @@ table{
         width: 1140px;
         margin: 0 auto;
         padding: 0;
-    }
-
-    .hr{
-        width: 1600px;
-        margin: 0 auto;
     }
 
     header{
