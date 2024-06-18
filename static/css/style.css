@@ -249,7 +249,27 @@ table{
 
 /*motiroes grandes*/
 @media (min-width: 1600px) {
-    main, footer {
+
+    footer {
+        height: 44px;
+        background-color: #F5F5F5;
+        padding: 1rem;
+        padding-left: 15.5%;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar {
+        width: 100%;
+        background-color: #F5F5F5; 
+        text-decoration: none;
+        padding-top: 13px;
+        padding-right: 15.5%;
+        padding-bottom: 13px;
+    }
+
+    main{
         width: 1140px;
         margin: 0 auto;
         padding: 0;
