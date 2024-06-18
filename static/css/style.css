@@ -1,10 +1,38 @@
+
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-color: #FFFFFF;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+body, html {
+    height: 100%;
+    margin: 0;
+}
+.content {
+    flex: 1;
+}
+
+/*footer*/
+footer {
+    background-color: #F5F5F5;
+    padding: 1rem;
+    padding-left: 6.5%;
+    font-size: 10px;
 }
 
 /*header*/
 
+header{
+    background-color: #F5F5F5;
+}
+
+.head img{
+    width: 87%;
+    height: 100px;
+}
 .navbar {
     text-decoration: none;
     padding-top: 13px;
@@ -198,15 +226,6 @@ table{
     margin-bottom: 1%;
 }
 
-/*footer*/
-
-footer {
-    padding-top: 15px;
-    padding-bottom: 0.5%;
-    padding-left: 6.5%;
-    font-size: 10px;
-}
-
 /* iframe moviles*/
 
 .pdf-view {
@@ -220,4 +239,33 @@ footer {
 .pdf-view canvas {
     max-width: 100%;
     height: auto;
+}
+
+/*motiroes grandes*/
+@media (min-width: 1600px) {
+    main, footer {
+        width: 1140px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .hr{
+        width: 1600px;
+        margin: 0 auto;
+    }
+
+    header{
+        width: 1310.37px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .head{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    head img{
+        width: 1140px;
+    }
 }

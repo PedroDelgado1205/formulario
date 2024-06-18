@@ -15,7 +15,7 @@
     <!-- Cabecera, logo y botón de inicio -->
     <header>
         <div class="head d-flex justify-content-center">
-            <img src="https://consultalegalizacionve.mppre.gob.ve/cal/static/src/img/header.png" width="87%" height="100" alt="navbar">
+            <img src="https://consultalegalizacionve.mppre.gob.ve/cal/static/src/img/header.png" alt="navbar">
         </div>
         <div class="navbar navbar-default navbar-static-top d-flex flex-row-reverse">
             <div class="inicio">
@@ -24,12 +24,12 @@
                 </a>
             </div>
         </div>
-        <div class="hr"></div>
     </header>
 
-    <!-- Cuerpo formularios -->
-    <main>
+    <div class="hr"></div>
 
+    <!-- Cuerpo formularios -->
+    <main class="content">
         <!-- Primer formulario, campos para ingresar los datos e interactuar con la página -->
         <form id="form1" class="content-fr" autocomplete="off">
             <div class="fr-header d-flex justify-content-center">
@@ -120,6 +120,8 @@
             </div>
         </form>
 
+        <div class="hr"></div>
+
         <!-- Cuarto formulario donde muestra un PDF (el PDF es genérico y de prueba) -->
         <form id="pdfViewer" class="content-fr" style="display: none;">
             <button class="btn btn-sm btn-1" id="volver">Volver</button>
@@ -136,14 +138,14 @@
                     <i class="fa-solid fa-download"></i>
                 </a>
             </div>
-            
         </form>
-        
     </main>
 
     <!-- Pie de página -->
     <footer>
-        Copyright © Sistema de Legalización y Apostilla Electrónica
+        <div>
+            Copyright © Sistema de Legalización y Apostilla Electrónica
+        </div>
     </footer>
 
     <!-- Mensaje de error del tercer formulario (Este es el mensaje anteriormente comentado del error de formato) -->
