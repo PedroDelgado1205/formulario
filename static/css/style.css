@@ -248,7 +248,7 @@ table{
 }
 
 /*motiroes grandes*/
-@media (min-width: 2100px) {
+@media (min-width: 1600px) {
 
     footer {
         height: 44px;
