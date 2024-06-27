@@ -59,9 +59,9 @@
                                     <div class="fomulario3">
                                         <span class="validacion-texto"><b>Esta Legalización/Apostilla es válida.</b></span>
                                         <div class="btns">
-                                            <button class="btn btn-sm btn-2" id="verPDF">
+                                            <a href="pdf_view.html" class="btn btn-sm btn-2" id="verPDF">
                                                 <i class="fa-regular fa-file-pdf"></i> Ver PDF
-                                            </button>
+                                            </a>
                                             <button class="btn btn-sm btn-3" id="limpiar">
                                                 <i class="fa-solid fa-broom"></i> Limpiar
                                             </button>
@@ -120,7 +120,7 @@
         </form>
 
         <!-- Cuarto formulario donde muestra un PDF (el PDF es genérico y de prueba) -->
-        <form id="pdfViewer" class="content-fr" style="display: none;">
+        <!-- <form id="pdfViewer" class="content-fr" style="display: none;">
             <button class="btn btn-sm btn-1" id="volver">Volver</button>
             <div class="pdf-view"></div>
             <div class="d-flex justify-content-center align-items-center">
@@ -135,7 +135,7 @@
                     <i class="fa-solid fa-download"></i>
                 </a>
             </div>
-        </form>
+        </form> -->
     </main>
 
     <!-- Pie de página -->
@@ -146,22 +146,22 @@
     </footer>
 
     <!-- Mensaje de error del tercer formulario (Este es el mensaje anteriormente comentado del error de formato) -->
-    <div class="modal fade" id="errorPDF" tabindex="-1" aria-labelledby="errorPDFLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="errorPDFLabel">Error de Formato</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>El archivo a cargar debe ser formato PDF y corresponder a un documento de Apostilla Electrónica emitido y firmado electrónicamente desde el Sistema de Legalización y Apostilla Electrónica.</p>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-4" data-bs-dismiss="modal">Aceptar</button>
-                </div>
+<div class="modal fade" id="errorPDF" tabindex="-1" aria-labelledby="errorPDFLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="errorPDFLabel">Error de Formato</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>El archivo a cargar debe ser formato PDF y corresponder a un documento de Apostilla Electrónica emitido y firmado electrónicamente desde el Sistema de Legalización y Apostilla Electrónica.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sm btn-4" data-bs-dismiss="modal">Aceptar</button>
             </div>
         </div>
     </div>
+</div>
 
     <!-- Mensaje de error del primer formulario (Este es el mensaje que se muestra en caso de encontrar los datos en la base de datos) -->
     <div class="modal fade" id="errorBD" tabindex="-1" aria-labelledby="errorBDLabel" aria-hidden="true">
